@@ -1,5 +1,6 @@
 import React from "react";
 import { View, StyleSheet, Dimensions } from "react-native";
+import MyAppText from "./myApp";
 
 const { width } = Dimensions.get("window");
 const numColumns = 2;
