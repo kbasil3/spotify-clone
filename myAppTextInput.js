@@ -7,7 +7,10 @@ const MyAppTextInput = ({ style, ...props }) => {
   return (
     <PaperTextInput
       style={[styles.input, style]}
-      theme={{ fonts: { regular: { fontFamily: "sans-serif" } } }}
+      theme={{
+        roundness: 50,
+        fonts: { regular: { fontFamily: "sans-serif" } },
+      }}
       {...props}
     />
   );
@@ -16,6 +19,7 @@ const MyAppTextInput = ({ style, ...props }) => {
 const styles = StyleSheet.create({
   input: {
     fontFamily: "sans-serif",
+    borderRadius: 50,
   },
 });
 

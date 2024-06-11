@@ -27,24 +27,27 @@ function LoginScreen({ navigation }) {
       <MyApp style={styles.title}>Millions of Songs</MyApp>
       <MyApp style={styles.title}>Only on Spotify</MyApp>
       {errorMessage ? <MyApp style={styles.error}>{errorMessage}</MyApp> : null}
-      <MyAppTextInput
-        label="Email"
-        value={email}
-        onChangeText={(text) => setEmail(text)}
-        style={styles.input}
-        keyboardType="email-address"
-        autoCapitalize="none"
-      />
-      <MyAppTextInput
-        label="Password"
-        value={password}
-        onChangeText={(text) => setPassword(text)}
-        style={styles.input}
-        secureTextEntry
-      />
-      <Button mode="contained" onPress={handleLogin} style={styles.button}>
-        Login
-      </Button>
+      <View style={styles.buttonContainer}>
+        <MyAppTextInput
+          label="Email"
+          value={email}
+          onChangeText={(text) => setEmail(text)}
+          style={styles.input}
+          keyboardType="email-address"
+          autoCapitalize="none"
+        />
+
+        <MyAppTextInput
+          label="Password"
+          value={password}
+          onChangeText={(text) => setPassword(text)}
+          style={styles.input}
+          secureTextEntry
+        />
+        <Button mode="contained" onPress={handleLogin} style={styles.button}>
+          Login
+        </Button>
+      </View>
     </View>
   );
 }
@@ -58,21 +61,31 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 24,
-    marginBottom: 20,
+    marginBottom: 10,
     textAlign: "center",
     color: "#fff",
   },
   input: {
-    marginBottom: 20,
+    marginBottom: 10,
+    width: 240,
+    justifyContent: "center",
+    backgroundColor: "#fff",
+    borderRadius: 50,
   },
   button: {
-    marginTop: 10,
+    marginTop: 30,
     backgroundColor: "#1DB954",
+    borderRadius: 50,
+    width: 240,
   },
   error: {
     color: "red",
     marginBottom: 20,
     textAlign: "center",
+  },
+  buttonContainer: {
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
 
